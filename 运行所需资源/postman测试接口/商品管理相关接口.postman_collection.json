@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "699c802e-388c-4d12-8af1-20223fd5eea4",
+		"name": "商品管理相关接口",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34211955"
+	},
+	"item": [
+		{
+			"name": "添加商品",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjoyLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzODgwMTU2fQ.RvQfL8gerwAuI2YLAVpQZ_BfzveZf0MERZPMwZGrGlM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productName\": \"y\",\r\n  \"productDesc\": \"sdfasdf\",\r\n  \"productPrice\": 9999,\r\n  \"productStock\": \"999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改商品信息",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjoyLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzODgwMTU2fQ.RvQfL8gerwAuI2YLAVpQZ_BfzveZf0MERZPMwZGrGlM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":\"8\",\r\n    \"productName\": \"x\",\r\n    \"productDesc\": \"fasdfa\",\r\n    \"productPrice\": 9999,\r\n    \"productStock\": \"999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除文章",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjoyLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzODgwNjkxfQ.matWxhMddf5lRs4WQf7Yy5gxds2AIXaCAEBSnOiSRnc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/product?id=8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "文章列表(条件分页)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjoyLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzODI3MDUxfQ.Ut1f1WdWQSZu54zE2-Pci2VqwfYycq5HIOhfT3v1PIE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/product?pageNum=1&pageSize=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.addHeader(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsiaWQiOjIsInVzZXJuYW1lIjoiMzE5MzM0ODU0In0sImV4cCI6MTcxMzI4MDQ4Nn0.yXNY60J3___YXX0v8ICN8p2SAWg4P_k4om_Q9Ors2Qo\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

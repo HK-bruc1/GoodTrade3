@@ -1,0 +1,5 @@
+1.sql脚本
+2.绿色redis
+3.postman接口
+
+先启动redis，再启动程序。就可以使用postman测试接口了

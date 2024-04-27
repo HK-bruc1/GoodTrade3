@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "5cb2c33a-7811-4cfc-bbc9-03b0803fffbe",
+		"name": "订单相关接口",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34211955"
+	},
+	"item": [
+		{
+			"name": "添加订单",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjozLCJpZCI6MiwidXNlcm5hbWUiOiIyMzk1NjU1MzU5In0sImV4cCI6MTcxNDI1MTUzMX0.E4nXrHJ2cP2aXkWdCsRf16yb5egbmswGIIRCTZ7cv1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"purchaseQuantity\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "订单列表（条件分页）",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjozLCJpZCI6MiwidXNlcm5hbWUiOiIyMzk1NjU1MzU5In0sImV4cCI6MTcxNDI0NDYzNH0.xaQZv1KP1IUavCgoS1ButBqRFHRA44qOEQ10IiSqHjs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/order?pageNum=1&pageSize=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除订单",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjozLCJpZCI6MiwidXNlcm5hbWUiOiIyMzk1NjU1MzU5In0sImV4cCI6MTcxNDI1MTUzMX0.E4nXrHJ2cP2aXkWdCsRf16yb5egbmswGIIRCTZ7cv1s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/order?orderId=9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改订单信息",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjozLCJpZCI6MiwidXNlcm5hbWUiOiIyMzk1NjU1MzU5In0sImV4cCI6MTcxNDI1MTUzMX0.E4nXrHJ2cP2aXkWdCsRf16yb5egbmswGIIRCTZ7cv1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/order/update?orderId=11&newQuantity=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"update"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "11"
+						},
+						{
+							"key": "newQuantity",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

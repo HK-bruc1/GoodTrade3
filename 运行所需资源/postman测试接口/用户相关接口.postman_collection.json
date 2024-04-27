@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "1ae6b2a2-14fe-4bfa-a359-6c8c44e286e7",
+		"name": "用户相关接口",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34211955"
+	},
+	"item": [
+		{
+			"name": "注册",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "repassword",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "2395655359",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取用户详细信息",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjpudWxsLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzNzk0NDE0fQ.4yAqUE_5l2HvQadMXtJeBYDzxNSE5iX-QoY0fFjzLJY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/userInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"userInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新用户基本信息",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjpudWxsLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzNzk0NDE0fQ.4yAqUE_5l2HvQadMXtJeBYDzxNSE5iX-QoY0fFjzLJY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"nickname\":\"Bruce\",\r\n    \"email\":\"319334854@qq.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新用户头像",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjoyLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzE0MTQzNzQ4fQ.xIbCyfqPHga6AiCIFBNctEq-mcF5Pa5BZQTRqp9Pt2s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/F:/privateData/wallhaven-zyrrgo_1920x1080.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/user/updateAvatar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"updateAvatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新用户密码",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicm9sZUlkIjoyLCJpZCI6MSwidXNlcm5hbWUiOiIzMTkzMzQ4NTQifSwiZXhwIjoxNzEzODAxMTc3fQ.uN__0g5N-kL43Js1miTmm9MoL-ge4-ib0D9IoHDqYNc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"old_pwd\":\"12345678\",\r\n    \"new_pwd\":\"88888888\",\r\n    \"re_pwd\":\"88888888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/updatePwd",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"updatePwd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "文章列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsiaWQiOjIsInVzZXJuYW1lIjoiMzE5MzM0ODU0In0sImV4cCI6MTcxMzAzOTYzM30.ZBSCdlfJFWW_yavc7-7HS53Mt6jqqtXdjfp4Ymi5KLc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/article/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.addHeader(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsiaWQiOjIsInVzZXJuYW1lIjoiMzE5MzM0ODU0In0sImV4cCI6MTcxMzI4MDQ4Nn0.yXNY60J3___YXX0v8ICN8p2SAWg4P_k4om_Q9Ors2Qo\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
